@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class matrix
 {
-    public static int i,j,r,c;
+    public static int i,j,r,c,count=1;
     public static Scanner sc=new Scanner(System.in);
 
     public static void main(String args[])
@@ -71,7 +71,7 @@ class matrix
                         System.out.print(m1[i][j]+"\t");
                     }
                 }
-                System.out.println("Secound Matrix is:");
+                System.out.println("\nSecound Matrix is:");
                 for(i=0;i<r;i++)
                 {
                     for(j=0;j<c;j++)
@@ -79,7 +79,7 @@ class matrix
                         System.out.print(m2[i][j]+"\t");
                     }
                 }
-                System.out.println("Transpose of First Matrix is:");
+                System.out.println("\nTranspose of First Matrix is:");
                 for(i=0;i<r;i++)
                 {
                     for(j=0;j<c;j++)
@@ -94,13 +94,12 @@ class matrix
                         System.out.print(tra1[i][j]+"\t");
                     }
                 }
-                System.out.println("Transpose of Secound Matrix is:\n");
+                System.out.println("\nTranspose of Secound Matrix is:\n");
                 for(i=0;i<r;i++)
                 {
                     for(j=0;j<c;j++)
                     {
                         tra2[j][i]=m2[i][j];
-                        System.out.print(m2[i][j]+"\t");
                     }
                 }
                 for(i=0;i<c;i++)
@@ -126,7 +125,7 @@ class matrix
                        m3[i][j]=sc.nextInt();
                     }
                 }
-                System.out.println("Matrix is:");
+                System.out.println("\nMatrix is:");
                 for(i=0;i<r1;i++)
                 {
                     for(j=0;j<c1;j++)
@@ -134,7 +133,7 @@ class matrix
                         System.out.print(m3[i][j]+"\t");
                     }
                 }
-                System.out.println("Transpose of Matrix is:");
+                System.out.println("\nTranspose of Matrix is:");
                 for(i=0;i<r1;i++)
                 {
                     for(j=0;j<c1;j++)
@@ -149,6 +148,25 @@ class matrix
                         System.out.print(tran[i][j]+"\t");
                     }
                 }
+                for(i=0;i<r1;i++)
+                {
+                    for(j=0;j<c1;j++)
+                    {
+                        if(m3[i][j]!=tran[i][j])
+                        {
+                            count++;
+                            break;
+                        }
+                    }
+                }
+                if(count==1)
+                {
+                    System.out.println("\nIts a Symmetric Matric");
+                }
+                else
+                {
+                    System.out.println("\nIts a Skew Symmetric Matrix");
+                }
                 break;
             case 5:
                 System.out.println("First Matrix is:\n");
@@ -159,7 +177,7 @@ class matrix
                         System.out.print(m1[i][j]+"\t");
                     }
                 }
-                System.out.println("Secound Matrix is:");
+                System.out.println("\nSecound Matrix is:");
                 for(i=0;i<r;i++)
                 {
                     for(j=0;j<c;j++)
